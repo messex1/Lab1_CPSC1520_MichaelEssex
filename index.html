@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="assets/icons/favicon.svg" />
-		<link rel="stylesheet" href="css/tailwind.css" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="assets/icons/favicon.svg">
+		<link rel="stylesheet" href="css/tailwind.css">
 		<title>Fastify Email Service</title>
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="js/index.js" defer></script>
 	</head>
 
 	<body class="h-screen flex flex-col justify-center relative">
@@ -61,26 +62,18 @@
 			<button id="speedTestButton" type="button" class="mt-3 block mx-auto rounded-lg bg-indigo-500 px-5 py-2 font-medium text-white">
 				Run Speed Test
 			</button>
-
-			<!--option A: insert JS directly into HTML via script tag
-			<script>
-			var button = document.getElementById('speedTestButton');
-			button.addEventListener('click', function() {
-            console.log('Button was clicked!');
-		    });
-			</script>
-			-->
-
-			<!--option B: insert JS via external file at end of body tag <script src="js/index.js"></script>-->
+			<!--End of TASK 1-->
 
 		</header>
 
 		<main>
+			<!--TASK 2: Dialog Element-->
+
 			<!-- email dialog (modal window) -->
-			<dialog class="backdrop:bg-blue-50/50">
+			<dialog id="emailDialog" class="backdrop:bg-blue-50/50">
 				<!-- close modal button -->
 				<nav class="flex flex-end mb-8">
-					<button
+					<button id="closeDialogButton" type="button"
 						class="ml-auto focus:outline-indigo-300 focus:bg-indigo-100 m-3 border-b-2 border-indigo-400">
 						<svg
 							class="w-4 h-4 fill-indigo-600 stroke-none"
@@ -143,7 +136,7 @@
 								id="name"
 								type="text"
 								placeholder="Name"
-								class="w-full border-b border-gray-200 p-3 text-sm" />
+								class="w-full border-b border-gray-200 p-3 text-sm">
 						</div>
 
 						<!-- Email Address -->
@@ -152,17 +145,19 @@
 							<input
 								type="email"
 								name="email"
+								id="email"
 								placeholder="Email address"
 								required
-								class="w-full border-b border-gray-200 p-3 text-sm" />
+								class="w-full border-b border-gray-200 p-3 text-sm">
 						</div>
 						<!-- Phone Number -->
 						<div>
 							<label class="sr-only" for="phone">Phone</label>
 							<input
-								placeholder="Phone Number"
 								type="tel"
-								class="w-full border-b border-gray-200 p-3 text-sm" />
+								id="phone"
+								placeholder="Phone Number"
+								class="w-full border-b border-gray-200 p-3 text-sm">
 						</div>
 
 						<!-- Message -->
@@ -186,6 +181,7 @@
 					</form>
 				</section>
 			</dialog>
+			<!--End of TASK 2-->
 		</main>
 		<script src="js/index.js"></script>
 	</body>
